@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/payment_item_profile_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintDimensionRatio="0.8:0.8"
+        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintVertical_bias="0.3"
+        android:src="@drawable/img"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/BlueGradientStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="2dp"
+        />
+    <TextView
+        android:id="@+id/received_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/payment_item_profile_image"
+        app:layout_constraintTop_toTopOf="@id/payment_item_profile_image"
+        android:text="Recevied"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorHeaderBlack"
+        android:textSize="15sp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:src="@color/point"
+        app:layout_constraintStart_toEndOf="@id/received_tv"
+        app:layout_constraintTop_toTopOf="@id/received_tv"
+        app:layout_constraintBottom_toBottomOf="@id/received_tv"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/payment_item_despription_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/payment_item_profile_image"
+        app:layout_constraintTop_toBottomOf="@id/received_tv"
+        android:layout_marginTop="5dp"
+        android:text="From Jonson de"
+        android:alpha="0.7"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/places_text_black_alpha_87"
+        android:textSize="10sp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_baseline_add_24"
+    android:layout_gravity="center"
+    app:tint="@color/places_text_black_alpha_87" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="1250"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_regular_font"
+            android:textColor="@color/colorHeaderBlack"
+            app:drawableStartCompat="@drawable/ic_dollar_sign"
+            app:drawableTint="@color/places_text_black_alpha_87" />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/payment_item_despription_tv"
+    android:background="@color/places_text_black_alpha_26"
+    android:layout_marginTop="25dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

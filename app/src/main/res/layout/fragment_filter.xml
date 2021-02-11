@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vvm.observer.FilterFragment">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/f_filter_mtbtn_save">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/f_filter_iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorGreenMessage" />
+            <!-- Filter Fragment Header -->
+            <TextView
+                android:id="@+id/f_filter_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segoeui_font"
+                android:text="Filter"
+                android:textColor="@color/colorHeaderBlackRussian"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/f_filter_iv_back" />
+<!--            filter icon-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/f_filter_tv_title">
+                <ImageView
+                    android:id="@+id/layout_inactive_search_bar_iv_filter"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_filter"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_filter"
+                    app:tint="#818181" />
+                <!-- Filter Fragment Header -->
+                <TextView
+                    android:id="@+id/f_reset_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui_font"
+                    android:text="Reset"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!--    checkboxStatus Container-->
+            <LinearLayout
+                android:id="@+id/checkboxContainerStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/f_filter_tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/f_filter_tv_title">
+
+                <TextView
+                    android:id="@+id/f_CheckBox_Status_title_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui_font"
+                    android:text="By Status :"
+                    android:textColor="@color/colorHeaderBlackRussian"
+                    android:textSize="25sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/all_status_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorGreenMessage"
+                    android:text="All" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/onGoing_status_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorGreenMessage"
+                    android:text="Ongoing" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/finished_status_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorGreenMessage"
+                    android:text="Finished" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/branches_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@id/checkboxContainerStatus"
+                app:layout_constraintTop_toBottomOf="@id/checkboxContainerStatus">
+
+                <TextView
+                    android:id="@+id/f_CheckBox_filter_by_branch_title_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui_font"
+                    android:text="Filter By Branch :"
+                    android:textColor="@color/colorHeaderBlackRussian"
+                    android:textSize="25sp"
+                    android:textStyle="normal" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/branches_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/item_green_chip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/checkBox_sort_by_Container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="@+id/f_filter_tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/branches_container">
+                <TextView
+                    android:id="@+id/sorting_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui_font"
+                    android:text="Short By :"
+                    android:textColor="@color/colorHeaderBlackRussian"
+                    android:textSize="25sp"
+                    android:textStyle="normal" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/top_rating_status_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorGreenMessage"
+                    android:text="Top Rating" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/least_rating_cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorGreenMessage"
+                    android:text="Least Rating" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/f_filter_mtbtn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/colorGreenMessage"
+        android:fontFamily="@font/segoeui_bold_font"
+        android:paddingTop="5dp"
+        android:paddingBottom="8dp"
+        android:text="Done"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
