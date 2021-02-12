@@ -2,7 +2,19 @@
 app user: Business managers.
 It is all about tours app that manages tours creation and guides profile and guides license and displays all payment for tour guides and their tours and other useful services.
 
-
+Techbology:
+- android: Java native
+- signle activity app using navigation component
+- real time database using firebase
+- kotlin coroutines and retrofit
+- clean archticture using MVVM and Life data
+- Payment method
+- Data Binding
+- chashing data using Room database and pagination technique
+- Push notification using FCM
+- dependancy injection using dagger hilt
+- Repositry Pattern
+- Fresco Library
 
 
 
